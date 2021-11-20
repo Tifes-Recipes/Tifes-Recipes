@@ -21,31 +21,32 @@
   </header>
   <h1>Tife's Recipes</h1>
   <main>
-    <div id="recipeBoxRG" class="empty">
-
-    </div>
-    <form>
+    <form id="recipeFormRG">
       <Legend>What would you like with your meal?</Legend>
       <fieldset>
         <label for="drinkOption">
           Drink?
           <select name="drinkOption" id="drinkOption">
             <option value="" disabled selected hidden>--</option>
-            <option value="noDrink">No Drink</option>
-            <option value="yesDrink">Include a Drink</option>
+            <option value="false">No Drink</option>
+            <option value="true">Include a Drink</option>
           </select>
         </label>
         <label for="dessertOption">
           Dessert?
           <select name="dessertOption" id="dessertOption">
             <option value="" disabled selected hidden>--</option>
-            <option value="noDessert">No Dessert</option>
-            <option value="yesDessert">Include a Dessert</option>
+            <option value="false">No Dessert</option>
+            <option value="true">Include a Dessert</option>
           </select>
         </label>
         <button type="submit">Submit</button>
       </fieldset>
     </form>
+    <div id="recipeBoxRG" class="empty">
+
+    </div>
+    <script src="../recipe.js"></script>
   </main>
 </body>
 </html>
