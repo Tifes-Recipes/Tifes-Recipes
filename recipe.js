@@ -34,7 +34,7 @@ function handleSubmit(event){
 
     currentMeal[1] = generateRandomEntre();
 
-    console.log(currentMeal);
+    // console.log(currentMeal);
 
     renderMeal(currentMeal, recipeContainerRG);
 
@@ -64,8 +64,8 @@ function initializeRecipeObjects(){
     entreRecipe("PB&J", [["bread", "slices", 2], ["peanutButter", "tablespoon", 1], ["jelly", "tablespoon", 1]]);
     entreRecipe("Ramen Noodles", [["noodle","block", 1], ["water", "ounces", 16], ["beef seasoning", "packet", 1]]);
     // If this doesn't work you will add more context to the drink recipe
-    drinkRecipe("Water" , [[]]);
-    drinkRecipe("Sweet tea", [[]]);
+    drinkRecipe("Water" , [["","",""]]);
+    drinkRecipe("Sweet tea", [["","",""]]);
     dessertRecipe("Chocolate cake", [["egg", "chicken", 4], ["flour", "cups", 2], ["coacoa powder", "cups", 15]]);
     dessertRecipe("Brownies",[["egg", "chicken", 1], ["flour", "cups", 5], ["coacoa powder", "cups", 14]] );
     // console.log(drinkRecipesArr);
@@ -96,7 +96,7 @@ function generateRandomDessert(){
 function renderMeal(meal, parentContainer){
     //For each step of the array:
         // make a container for it 
-
+    console.log(meal);
     parentContainer.innerHTML = ""
     for(let i = 0; i < 3; i++){
         let mealContainer = document.createElement('div');
@@ -114,10 +114,26 @@ function renderMeal(meal, parentContainer){
             mealText.textContent = meal[i];
         } else {
             let currentRecipe = meal[i];
-            mealTitle.textContent = currentRecipe.recipeName
+            mealTitle.textContent = currentRecipe.recipeName;
+            let ul = document.createElement('ul');
+            for(let j = 0; j < meal[i].ingredients.length; j++){
+                let li = document.createElement('li');
+                ul.appendChild(li);
+                li.textContent = `${meal[i].ingredients[j][2]} ${meal[i].ingredients[j][1]} ${meal[i].ingredients[j][0]}`;
+            }
+            mealText.appendChild(ul);
+            console.log(ul)
         }
     }
-        
+    let saveRecipeButton = document.createElement('div');
+    saveRecipeButton.id = "saveButton";
+    saveRecipeButton.textContent = "Save This Recipe"
+    parentContainer.appendChild(saveRecipeButton);
+    saveRecipeButton.addEventListener('click', handleSaveButtonClick);
+}
+
+function handleSaveButtonClick(event){
+
 }
 
 
