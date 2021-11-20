@@ -54,12 +54,21 @@ right: -945px;
 }
 
 
+
 #recipeBoxRG {
   display: flex;
   justify-content: space-between;
 }
+
 #mealContainer {
 border: 1px black dashed;
 padding: 10px;
 }
 
+#mealContainer ul li {
+  display: block;
+}
+
+#mealContainer li {
+  list-style-type: disc;
+}
