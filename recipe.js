@@ -20,20 +20,20 @@ function handleSubmit(event){
     let dessert = event.target.dessertOption.value;
     
     if(drink == true){
-        generateRandomDrink();
+        currentMeal[0] = generateRandomDrink();
     }else{
-
+        currentMeal[0] = "You did not choose a drink.";
     }
 
     if(dessert == true){
-        generateRandomDessert();
+        currentMeal[2] = generateRandomDessert();
     }else{
-
+        currentMeal[2] = "You did not choose a dessert.";
     }
 
-    generateRandomMeal(){
-        
-    }
+    currentMeal[1] = generateRandomEntre();
+
+    renderMeal(currentMeal, recipeContainerRG);
 
     console.log(drink, dessert);
 
@@ -62,17 +62,27 @@ function initializeRecipeObjects(){
 }
 
 function generateRandomEntre(){
-
+    //TODO: generate random 
 }
 
 function generateRandomDrink(){
-
+    //TODO: generate random 
 }
 
 function generateRandomDessert(){
-
+    //TODO: generate random 
 }
 
+
+function renderMeal(meal, parentContainer){
+    //For each step of the array:
+        // make a container for it 
+        //* check whether it's an object or a string; 
+            //string, just set the content of the container to the string
+            //object, run a special method to parse the object into something readable
+        // append the new object to parentContainer
+        
+}
 // renderRecipe(some container, recipe object){
 //     take the recipe object, create a new div element top put it in, create text content of the new div with parsed recipe, append the readable recipe to "some container"
 // }
