@@ -6,11 +6,12 @@ body {
   background-color: #f8d59f;
 }
 
-main, 
+main,footer p,  
 header nav {
   margin: 0 auto;
   width: 1024px;
 }
+
 header, footer{
   background-color: #993100;
   padding: 25px;
@@ -49,5 +50,16 @@ p {
 
 .try-nowH {
 position: relative;
-right: -950px;
+right: -945px;
 }
+
+
+#recipeBoxRG {
+  display: flex;
+  justify-content: space-between;
+}
+#mealContainer {
+border: 1px black dashed;
+padding: 10px;
+}
+
