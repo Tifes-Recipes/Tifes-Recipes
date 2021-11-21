@@ -53,16 +53,29 @@ position: relative;
 right: -945px;
 }
 
+.formRG {
+  text-align: center;
+}
 
+.submitRG {
+  background-color: #cc9880;
+}
 
 #recipeBoxRG {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
+#saveButton {
+  border: 1px black solid;
+  width: 100%;
+  text-align: center;
+}
 #mealContainer {
 border: 1px black dashed;
 padding: 10px;
+width: 30%;
 }
 
 #mealContainer ul li {
@@ -72,3 +85,4 @@ padding: 10px;
 #mealContainer li {
   list-style-type: disc;
 }
+
