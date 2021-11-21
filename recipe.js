@@ -2,7 +2,6 @@
 
 let recipeForm = document.getElementById("recipeFormRG");
 let recipeContainerRG = document.getElementById("recipeBoxRG");
-let recipeContainerTP = document.getElementById("storedRecipesTP");
 let entreRecipesArr = [];
 let drinkRecipesArr = [];
 let dessertRecipesArr = [];
@@ -37,6 +36,11 @@ function handleSubmit(event){
     // console.log(currentMeal);
 
     renderMeal(currentMeal, recipeContainerRG);
+    let saveRecipeButton = document.createElement('div');
+    saveRecipeButton.id = "saveButton";
+    saveRecipeButton.textContent = "Save This Recipe"
+    recipeContainerRG.appendChild(saveRecipeButton);
+    saveRecipeButton.addEventListener('click', handleSaveButtonClick);
 
     console.log(drink, dessert);
 
@@ -125,25 +129,30 @@ function renderMeal(meal, parentContainer){
             console.log(ul)
         }
     }
-    let saveRecipeButton = document.createElement('div');
-    saveRecipeButton.id = "saveButton";
-    saveRecipeButton.textContent = "Save This Recipe"
-    parentContainer.appendChild(saveRecipeButton);
-    saveRecipeButton.addEventListener('click', handleSaveButtonClick);
 }
 
 function handleSaveButtonClick(event){
-
+    //have an array in localstorage with all of the saved meal arrays inside of it 
+    //Array name will be topPicks
+    //check to see if the array already exists
+        //if it exists, pull it out, push the new saved meal onto it, and then push it back into localstorage
+        //it it doesn't exist, make a new array, put the saved meal on it, and then push it into localstorage
+    if(localStorage.getItem("topPicks")){
+        let stringifiedSavedMealArray = localStorage.getItem("topPicks");
+        let savedMealArray = JSON.parse(stringifiedSavedMealArray);
+        savedMealArray.push(currentMeal);
+        stringifiedSavedMealArray = JSON.stringify(savedMealArray);
+        localStorage.setItem("topPicks", stringifiedSavedMealArray);
+    }else{
+        let savedMealArray = [];
+        savedMealArray.push(currentMeal);
+        let stringifiedSavedMealArray = JSON.stringify(savedMealArray);
+        localStorage.setItem("topPicks", stringifiedSavedMealArray);
+    }
+    recipeContainerRG.innerHTML = "<p>Your recipe was saved! Check out your top picks page :)</p>";
 }
 
-
-
-// renderTopPics(){
-// pull an array out of localstorage with all the stored recipes
-// iterate through the array 
-// for each meal in the top pics array, make a new div, and then call renderRecipe 3 times and display the stored drink, entre, and dessert, then move on to the next meal. 
-// }
-
+init();
 
 function test(){
     // for(let i = 0; i < mealRecipes.length; i++){
@@ -151,6 +160,3 @@ function test(){
     // }
     // console.log(recipeForm);
 }
-
-
-init();
