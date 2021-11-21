@@ -43,7 +43,6 @@ h1 {
   margin-bottom: 15px;
   font-family: 'Playfair Display', serif;
   letter-spacing: 2px;
-  font-weight: ;
 }
 
 ul li {
@@ -78,6 +77,9 @@ header nav ul li:last-child {
   margin-top: 15px;
   max-width: 45%;
   font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-style: italic;
 }
 
 .try-nowH {
@@ -100,8 +102,28 @@ border-radius: 13px;
   text-align: center;
 }
 
+label, legend {
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+legend {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+fieldset {
+  margin-bottom: 3rem;
+}
+
+
 .submitRG {
   background-color: #cc9880;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 15px;
 }
 
 #recipeBoxRG {
@@ -111,14 +133,38 @@ border-radius: 13px;
 }
 
 #saveButton {
-  border: 1px black solid;
-  width: 100%;
+  border: 2px gray outset;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: #cc9880;
+  width: 75%;
   text-align: center;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px;
+  cursor: pointer;
+
 }
 #mealContainer {
-border: 1px black dashed;
+border: 1px black solid;
 padding: 10px;
 width: 30%;
+font-family: 'Architects Daughter', cursive;
+background-color: #ddc39e;
+}
+
+#mealContainer h2 {
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+#recipeBoxRG p{
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Architects Daughter', cursive;
+  font-size: 20px;
 }
 
 #mealContainer ul li {
@@ -131,4 +177,47 @@ width: 30%;
 
 #spacer {
   height: 3.5rem;
+}
+
+#storedRecipesTP div {
+  width: 280px;
+  margin-left: 5px;
+}
+
+#mealContainer {
+  margin-left: 20px;
+}
+
+#mealContainer:last-of-type {
+  margin-bottom: 30px;
+}
+
+#storedRecipesTP {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#aboutUsAU {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#aboutUsAU article {
+  max-width: 45%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+div .removeButton{
+  border: 1px black solid;
+  max-width: fit-content;
+  max-height: 30px;
+  padding: 5px;
+  cursor: pointer;
+  background-color: #993100;
+  margin-right: 20px;
+  display: flex;
+  flex-wrap: wrap;
 }

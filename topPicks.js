@@ -36,7 +36,7 @@ function renderMeal(meal, parentContainer, index){
         }
     }
     let removeRecipeButton = document.createElement('div');
-    removeRecipeButton.class = "removeButton";
+    removeRecipeButton.setAttribute('class', 'removeButton');
     removeRecipeButton.id = index;
     removeRecipeButton.textContent = "X"
     recipeContainerTP.appendChild(removeRecipeButton);
