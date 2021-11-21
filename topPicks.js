@@ -4,7 +4,7 @@ let recipeContainerTP = document.getElementById("storedRecipesTP");
 
 renderTopPicks();
 
-function renderMeal(meal, parentContainer){
+function renderMeal(meal, parentContainer, index){
     //For each step of the array:
         // make a container for it 
     console.log(meal);
@@ -33,13 +33,18 @@ function renderMeal(meal, parentContainer){
                 li.textContent = `${meal[i].ingredients[j][2]} ${meal[i].ingredients[j][1]} ${meal[i].ingredients[j][0]}`;
             }
             mealText.appendChild(ul);
-            console.log(ul)
         }
     }
+    let removeRecipeButton = document.createElement('div');
+    removeRecipeButton.class = "removeButton";
+    removeRecipeButton.id = index;
+    removeRecipeButton.textContent = "X"
+    recipeContainerTP.appendChild(removeRecipeButton);
+    removeRecipeButton.addEventListener('click', handleRemoveButtonClick);
 }
 
 function renderTopPicks(){
-    console.log("hi hello'");
+    console.log(localStorage.getItem("topPicks"));
     if(localStorage.getItem("topPicks")){
         recipeContainerTP.innerHTML = "";
         let stringifiedSavedMealArray = localStorage.getItem("topPicks");
@@ -47,11 +52,30 @@ function renderTopPicks(){
         for(let i = 0; i < savedMealArray.length; i++){
             let topPicsDiv = document.createElement('div');
             recipeContainerTP.appendChild(topPicsDiv);
-            renderMeal(savedMealArray[i], topPicsDiv);
+            renderMeal(savedMealArray[i], topPicsDiv, i);
         }
+    } else {
+        recipeContainerTP.innerHTML = "You need to generate some recipes!"
     }
+    
 
 // pull an array out of localstorage with all the stored recipes
 // iterate through the array 
 // for each meal in the top pics array, make a new div, and then call renderRecipe 3 times and display the stored drink, entre, and dessert, then move on to the next meal. 
 }
+
+function handleRemoveButtonClick (e) {
+e.preventDefault();
+let stringifiedSavedMealArray = localStorage.getItem("topPicks");
+let savedMealArray = JSON.parse(stringifiedSavedMealArray);
+savedMealArray.splice(e.target.id, 1);
+if (savedMealArray.length < 1){
+    localStorage.removeItem("topPicks")
+} else {
+    localStorage.setItem("topPicks", JSON.stringify(savedMealArray)); 
+}
+renderTopPicks();
+}
+
+
+
