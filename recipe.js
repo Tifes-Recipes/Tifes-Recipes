@@ -149,7 +149,7 @@ function handleSaveButtonClick(event){
         let stringifiedSavedMealArray = JSON.stringify(savedMealArray);
         localStorage.setItem("topPicks", stringifiedSavedMealArray);
     }
-    recipeContainerRG.innerHTML = "<p>Your recipe was saved! Check out your top picks page :)</p>";
+    recipeContainerRG.innerHTML = "<p id=\"saveMessage\">Your recipe was saved! Check out your top picks page 😉</p>";
 }
 
 init();
