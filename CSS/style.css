@@ -6,24 +6,45 @@ body {
   background-color: #f8d59f;
 }
 
-main,footer p,  
+main, footer p, 
 header nav {
   margin: 0 auto;
   width: 1024px;
 }
 
-header, footer{
+main {
+  margin-bottom: 3.5rem;
+}
+
+header{
   background-color: #993100;
   padding: 25px;
 }
 
-h1 {
+footer {
+  background-color: #993100;
+  height: 3rem;
+  position: fixed;
+  bottom: 0;
+  margin-top: 1rem;
+  width: 100%;
+  color: #ddc39e;
   text-align: center;
-  font-size: 2rem;
-  margin-top: 15px;
-  margin-bottom: 15px;
 }
 
+footer p {
+  margin-top: 1rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 2px;
+  font-weight: ;
+}
 
 ul li {
   display: inline-block;
@@ -34,6 +55,14 @@ li a{
   text-decoration: none;
   border: 1px #ddc39e solid;
   background-color: #ddc39e;
+  padding: 10px;
+  margin-right: 20px;
+  border-radius: 7px;
+  font-weight: bold;
+}
+
+header nav ul li:last-child {
+  float: right;
 }
 
 #blurbsH {
@@ -43,14 +72,28 @@ li a{
   justify-content: space-between;
 }
 
-p {
+
+#blurbsH p {
   flex: 1;
   margin-top: 15px;
+  max-width: 45%;
+  font-size: 20px;
 }
 
 .try-nowH {
 position: relative;
-right: -945px;
+/* right: -945px; */
+float: right;
+background-color: #993100;
+padding: 8px;
+border-radius: 13px;
+}
+
+.try-nowH a{
+  text-decoration: none;
+  font-size: 20px;
+  color:#ddc39e;
+  font-weight: bold;
 }
 
 .formRG {
@@ -86,3 +129,6 @@ width: 30%;
   list-style-type: disc;
 }
 
+#spacer {
+  height: 3.5rem;
+}
