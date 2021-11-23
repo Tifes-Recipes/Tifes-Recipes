@@ -67,11 +67,38 @@ function dessertRecipe(recipeName, ingredientsList){
 function initializeRecipeObjects(){
     entreRecipe("PB&J", [["bread", "slices", 2], ["peanutButter", "tablespoon", 1], ["jelly", "tablespoon", 1]]);
     entreRecipe("Ramen Noodles", [["noodle","block", 1], ["water", "ounces", 16], ["beef seasoning", "packet", 1]]);
+    entreRecipe("Chickpea and Tomato Stew", [["tomatoes", "medium-sized", 6], ["olive oil", "cup", 0.5], ["onions, chopped", "medium-sized", 2],["garlic", "cloves", 4],["boiled, drained chickpeas", "cups", 2], ["parsley, chopped", "cup", 0.5], ["thyme", "teaspoon", 0.5], ["salt", "teaspoon", 1]]);
+    entreRecipe("Zucchini Garlic Stir-fry", [["zucchini", "lbs", 1.5], ["salt", "tsp", 2.25], ["vegetable oil", "tbsp", 3], ["garlic", "cloves", 4], ["sugar", "tsp", 0.25], ["Xiaoxing wine or dry sherry", "tbsp", 1]]);
+    entreRecipe("Caldo Verde (\"green soup\")", [["potatoes, diced", "medium-sized", 4], ["onion, coarsely chopped", "medium-sized", 1], ["kale leaves, shredded", "firmly packed cups", 2], ["garlic", "cloves", 12], ["salt", "tsp", 1], ["olive oil", "tbsp", 1], ["black pepper", "tsp", 2]]);
+    entreRecipe("Stir-fried chicken and leeks", [["chicken", "breast", 1], ["leek stalks", "lbs", 1], ["ginger root", "slices", 3], ["soy sauce", "tbsp", 2], ["sherry", "tbsp", 1], ["oil", "tbsp", 4]]);
+    entreRecipe("Stir-fried chicken with eggplant and hot peppers", [["chicken", "breast", 1], ["soy sauce", "tbsp", 1], ["sherry", "tbsp", 1], ["cornstarch", "tbsp", 1], ["eggplant", "medium", 1], ["chili peppers", "whole", 3], ["ginger root", "slices", 3], ["garlic", "clove", 1], ["oil", "tbsp", 4]]);
     // If this doesn't work you will add more context to the drink recipe
     drinkRecipe("Water" , [["","",""]]);
     drinkRecipe("Sweet tea", [["","",""]]);
-    dessertRecipe("Chocolate cake", [["egg", "chicken", 4], ["flour", "cups", 2], ["coacoa powder", "cups", 15]]);
-    dessertRecipe("Brownies",[["egg", "chicken", 1], ["flour", "cups", 5], ["coacoa powder", "cups", 14]] );
+    drinkRecipe("Lemon-lime soda", [["","",""]]);
+    drinkRecipe("Cola", [["","",""]]);
+    drinkRecipe("Lemonade", [["Lemon Juice", "tbsp", 1], ["sugar", "tbsp", 2], ["water", "fluid oz", 8]]);
+    drinkRecipe("Milk", [["","",""]]);
+    drinkRecipe("Chocolate milk", [["","",""]]);
+    drinkRecipe("White wine", [["","",""]]);
+    drinkRecipe("Red wine", [["","",""]]);
+    drinkRecipe("Beer", [["","",""]]);
+    drinkRecipe("Root Beer", [["","",""]]);
+    drinkRecipe("Herbal Tea", [["","",""]]);
+    drinkRecipe("Orange Juice", [["","",""]]);
+    drinkRecipe("Apple Juice", [["","",""]]);
+    drinkRecipe("Coconut Milk", [["","",""]]);
+    drinkRecipe("Milkshake", [["Ice cream, any flavor", "scoops", 3], ["Milk", "Fluid oz", 8]]);
+    dessertRecipe("Sugared walnuts", [["walnut meats", "cups", 1.5], ["water", "cups", 1], ["sugar", "cups", 1], ["oil", "cups", 0.5]]);
+    dessertRecipe("Sweet pineapple tea", [["sugar", "cups", 0.5], ["honey", "cups", 0.25], ["water", "cups", 3], ["crushed pineapple", "oz", 16]]);
+    dessertRecipe("Almond cookies", [["almonds", "whole", 35], ["almonds", "ground", 10], ["lard", "cups", 1], ["sugar", "cups", 1], ["egg", "medium", 1], ["almond extract", "tsp", 1], ["flour", "cups", 2.5], ["baking powder", "tsp", 1.5], ["salt", "pinch", 1]]);
+    dessertRecipe("Steamed red date cake", [["Chinese red dates", "cups", 2], ["glutinous rice flower", "cup", 1], ["water", "cup", 1.5]]);
+    dessertRecipe("Steamed Sponge Cake", [["eggs", "medium", 6], ["sugar", "cups", 1.5], ["flour", "cups", 1.5], ["water", "tbsp", 2.5], ["baking powder", "tsp", 0.5], ["vanilla extract", "tsp", 1]]);
+    dessertRecipe("Crumbly cake", [["flour", "cups", 1.33], ["cornmeal", "cups", 0.66], ["sugar", "cups", 0.75], ["grated peel", "lemon's", 1], ["almonds", "oz", 4], ["yolks", "egg", 2], ["butter", "lbs", 0.25], ["confectioner's sugar", "tbsp", 1]]);
+    dessertRecipe("Sweet pastry fritters", [["flour", "cups", 1.66], ["sugar", "tbsp", 1.5], ["egg", "large", 1], ["white wine", "tbsp", 2], ["salt", "pinch", 2], ["confectioner's sugar, for dusting", "tbsp", 2]]);
+    dessertRecipe("Spuma de cioccolata (Cold chocolate foam)", [["semi-sweet chocolate", "oz", 6], ["sugar", "tsp", 2], ["eggs", "large", 4], ["strong espresso coffee", "cups", 0.25], ["rum", "tbsp", 2], ["heavy whipping cream", "cup", 0.66]]);
+    dessertRecipe("Zabaione", [["yolks", "egg", 4], ["sugar", "cups", 0.25], ["dry Marsala", "cups", 0.5]]);
+    dessertRecipe("Gelato spazzacamino", [["vanilla Ice Cream", "scoops", 2], ["ground dried espresso coffee", "tsp", 2], ["scotch whiskey", "tbsp", 1]]);
     // console.log(drinkRecipesArr);
 }
 
