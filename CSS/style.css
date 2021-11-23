@@ -160,11 +160,15 @@ background-color: #ddc39e;
   text-decoration: underline;
 }
 
-#recipeBoxRG p{
+#recipeBoxRG p, #storedRecipesTP p{
   margin-left: auto;
   margin-right: auto;
   font-family: 'Architects Daughter', cursive;
   font-size: 20px;
+}
+
+#storedRecipesTP p {
+  margin-top: 40px;
 }
 
 #mealContainer ul li {
@@ -220,16 +224,16 @@ div .removeButton{
   margin-right: 20px;
   display: flex;
   flex-wrap: wrap;
-
+  color:#ddc39e;
 }
 
-.tiara {
+.tiara, .aoife {
   width: 200px;
   border-radius: 100%;
   float: left;
 }
 
-.tiaraEmail {
+.tiaraEmail, .aoifeEmail {
   text-decoration: none;
   text-align: center;
 }
