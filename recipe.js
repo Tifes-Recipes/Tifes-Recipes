@@ -72,6 +72,7 @@ function initializeRecipeObjects(){
     entreRecipe("Caldo Verde (\"green soup\")", [["potatoes, diced", "medium-sized", 4], ["onion, coarsely chopped", "medium-sized", 1], ["kale leaves, shredded", "firmly packed cups", 2], ["garlic", "cloves", 12], ["salt", "tsp", 1], ["olive oil", "tbsp", 1], ["black pepper", "tsp", 2]]);
     entreRecipe("Stir-fried chicken and leeks", [["chicken", "breast", 1], ["leek stalks", "lbs", 1], ["ginger root", "slices", 3], ["soy sauce", "tbsp", 2], ["sherry", "tbsp", 1], ["oil", "tbsp", 4]]);
     entreRecipe("Stir-fried chicken with eggplant and hot peppers", [["chicken", "breast", 1], ["soy sauce", "tbsp", 1], ["sherry", "tbsp", 1], ["cornstarch", "tbsp", 1], ["eggplant", "medium", 1], ["chili peppers", "whole", 3], ["ginger root", "slices", 3], ["garlic", "clove", 1], ["oil", "tbsp", 4]]);
+    entreRecipe("French Toast", [["ground cinnamon", "tsp", 1], ["ground nutmeg", "tsp", 1/4], ["sugar", "tbsp", 2], ["butter", "tbsp", 4], ["eggs", "medium", 4], ["milk", "cup", 1/4], ["vanilla extract", "tsp", 1/2], ["brioche", "slices", 2], ["maple syrup", "cup", 1/2]]);
     // If this doesn't work you will add more context to the drink recipe
     drinkRecipe("Water" , [["","",""]]);
     drinkRecipe("Sweet tea", [["","",""]]);
