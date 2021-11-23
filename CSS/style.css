@@ -220,5 +220,16 @@ div .removeButton{
   margin-right: 20px;
   display: flex;
   flex-wrap: wrap;
+
+}
+
+.tiara {
+  width: 200px;
+  border-radius: 100%;
+  float: left;
+}
+
+.tiaraEmail {
+  text-decoration: none;
   text-align: center;
 }
