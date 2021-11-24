@@ -10,14 +10,12 @@ let currentMeal = [];
 function init(){
     initializeRecipeObjects();
     recipeForm.addEventListener("submit", handleSubmit);
-    test();
 }
 
 function handleSubmit(event){
     event.preventDefault();
     let drink = event.target.drinkOption.value;
     let dessert = event.target.dessertOption.value;
-    // console.log(typeof(drink));
     if(drink === 'true'){
         currentMeal[0] = generateRandomDrink();
 
@@ -33,16 +31,12 @@ function handleSubmit(event){
 
     currentMeal[1] = generateRandomEntre();
 
-    // console.log(currentMeal);
-
     renderMeal(currentMeal, recipeContainerRG);
     let saveRecipeButton = document.createElement('div');
     saveRecipeButton.id = "saveButton";
     saveRecipeButton.textContent = "Save This Recipe"
     recipeContainerRG.appendChild(saveRecipeButton);
     saveRecipeButton.addEventListener('click', handleSaveButtonClick);
-
-    console.log(drink, dessert);
 
     recipeForm.reset();
 }
@@ -73,7 +67,6 @@ function initializeRecipeObjects(){
     entreRecipe("Stir-fried chicken and leeks", [["chicken", "breast", 1], ["leek stalks", "lbs", 1], ["ginger root", "slices", 3], ["soy sauce", "tbsp", 2], ["sherry", "tbsp", 1], ["oil", "tbsp", 4]]);
     entreRecipe("Stir-fried chicken with eggplant and hot peppers", [["chicken", "breast", 1], ["soy sauce", "tbsp", 1], ["sherry", "tbsp", 1], ["cornstarch", "tbsp", 1], ["eggplant", "medium", 1], ["chili peppers", "whole", 3], ["ginger root", "slices", 3], ["garlic", "clove", 1], ["oil", "tbsp", 4]]);
     entreRecipe("French Toast", [["ground cinnamon", "tsp", 1], ["ground nutmeg", "tsp", 1/4], ["sugar", "tbsp", 2], ["butter", "tbsp", 4], ["eggs", "medium", 4], ["milk", "cup", 1/4], ["vanilla extract", "tsp", 1/2], ["brioche", "slices", 2], ["maple syrup", "cup", 1/2]]);
-    // If this doesn't work you will add more context to the drink recipe
     drinkRecipe("Water" , [["","",""]]);
     drinkRecipe("Sweet tea", [["","",""]]);
     drinkRecipe("Lemon-lime soda", [["","",""]]);
@@ -100,26 +93,21 @@ function initializeRecipeObjects(){
     dessertRecipe("Spuma de cioccolata (Cold chocolate foam)", [["semi-sweet chocolate", "oz", 6], ["sugar", "tsp", 2], ["eggs", "large", 4], ["strong espresso coffee", "cups", 0.25], ["rum", "tbsp", 2], ["heavy whipping cream", "cup", 0.66]]);
     dessertRecipe("Zabaione", [["yolks", "egg", 4], ["sugar", "cups", 0.25], ["dry Marsala", "cups", 0.5]]);
     dessertRecipe("Gelato spazzacamino", [["vanilla Ice Cream", "scoops", 2], ["ground dried espresso coffee", "tsp", 2], ["scotch whiskey", "tbsp", 1]]);
-    // console.log(drinkRecipesArr);
 }
 
 function generateRandomEntre(){
-    //TODO: generate random 
     let entreRecipeRandom = Math.round(Math.random() * (entreRecipesArr.length - 1));
     return entreRecipesArr[entreRecipeRandom];
 
 }
 
-function generateRandomDrink(){
-    //TODO: generate random        
-       
-       let drinkRecipeRandom = Math.round(Math.random() * (drinkRecipesArr.length - 1));
-       return drinkRecipesArr[drinkRecipeRandom];
+function generateRandomDrink(){      
+    let drinkRecipeRandom = Math.round(Math.random() * (drinkRecipesArr.length - 1));
+    return drinkRecipesArr[drinkRecipeRandom];
        
 }
 
 function generateRandomDessert(){
-    //TODO: generate random 
     let dessertRecipeRandom = Math.round(Math.random() * (dessertRecipesArr.length - 1));
     return dessertRecipesArr[dessertRecipeRandom];
 }
@@ -128,7 +116,6 @@ function generateRandomDessert(){
 function renderMeal(meal, parentContainer){
     //For each step of the array:
         // make a container for it 
-    console.log(meal);
     parentContainer.innerHTML = ""
     for(let i = 0; i < 3; i++){
         let mealContainer = document.createElement('div');
@@ -154,7 +141,6 @@ function renderMeal(meal, parentContainer){
                 li.textContent = `${meal[i].ingredients[j][2]} ${meal[i].ingredients[j][1]} ${meal[i].ingredients[j][0]}`;
             }
             mealText.appendChild(ul);
-            console.log(ul)
         }
     }
 }
@@ -181,10 +167,3 @@ function handleSaveButtonClick(event){
 }
 
 init();
-
-function test(){
-    // for(let i = 0; i < mealRecipes.length; i++){
-    //     console.log(mealRecipes[i]);
-    // }
-    // console.log(recipeForm);
-}

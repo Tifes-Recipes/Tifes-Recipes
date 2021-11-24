@@ -47,7 +47,6 @@ function renderMeal(meal, parentContainer, index){
 }
 
 function renderTopPicks(){
-    //console.log(localStorage.getItem("topPicks"));
     //check if localstorage has any saved recipes
     if(localStorage.getItem("topPicks")){
         //clear the recipe container
@@ -67,26 +66,26 @@ function renderTopPicks(){
     }
     
 
-// pull an array out of localstorage with all the stored recipes
-// iterate through the array 
-// for each meal in the top pics array, make a new div, and then call renderRecipe 3 times and display the stored drink, entre, and dessert, then move on to the next meal. 
+    // pull an array out of localstorage with all the stored recipes
+    // iterate through the array 
+    // for each meal in the top pics array, make a new div, and then call renderRecipe 3 times and display the stored drink, entre, and dessert, then move on to the next meal. 
 }
 
 function handleRemoveButtonClick (e) {
-e.preventDefault();
-//pull the recipe array out of storage and parse it again
-let stringifiedSavedMealArray = localStorage.getItem("topPicks");
-let savedMealArray = JSON.parse(stringifiedSavedMealArray);
-//remove the recipe from the array corresponding to which delete button has been clicked
-savedMealArray.splice(e.target.id, 1);
-//if the array is now empty, delete the entry from local storage. If there are still items left, save the array back to localstorage
-if (savedMealArray.length < 1){
-    localStorage.removeItem("topPicks")
-} else {
-    localStorage.setItem("topPicks", JSON.stringify(savedMealArray)); 
-}
-//render the page again to update the list so that the removed recipe is visually gone
-renderTopPicks();
+    e.preventDefault();
+    //pull the recipe array out of storage and parse it again
+    let stringifiedSavedMealArray = localStorage.getItem("topPicks");
+    let savedMealArray = JSON.parse(stringifiedSavedMealArray);
+    //remove the recipe from the array corresponding to which delete button has been clicked
+    savedMealArray.splice(e.target.id, 1);
+    //if the array is now empty, delete the entry from local storage. If there are still items left, save the array back to localstorage
+    if (savedMealArray.length < 1){
+        localStorage.removeItem("topPicks")
+    } else {
+        localStorage.setItem("topPicks", JSON.stringify(savedMealArray)); 
+    }
+    //render the page again to update the list so that the removed recipe is visually gone
+    renderTopPicks();
 }
 
 
